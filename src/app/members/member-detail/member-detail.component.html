@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row" *ngIf="member" >
+        <div class="col-4">
+            <div class="card">
+                      <img src="{{member.data.photos[0]||'./assets/user.png'}}" alt="{{member.data.username}}"
+                class="card-img-top img-thumbnail"
+                >           
+                <div class="card-body">
+                    <div>
+                        <strong>Location:</strong>
+                        <p>{{member.data.city}}</p>
+                    </div>
+                    <div>
+                        <strong>Age:</strong>
+                        <p>{{member.data.age}}</p>
+                    </div>
+                    <div>
+                        <strong>Created:</strong>
+                        <p>{{member.data.Created}}</p>
+                    </div>
+                    <div>
+                        <strong>Location:</strong>
+                        <p>{{member.data.city}}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group d-flex">
+                        <button class="btn btn-primary">
+                            Like
+                        </button>
+                        <button class="btn btn-success">
+                            Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 d-flex">
+            <tabset class="member-tabset">
+                <!--  -->
+<tab heading='About'> 
+    <h4>
+        Description
+    </h4>
+    <p>{{member.data.username}}</p>
+    <h4>Looking For</h4>
+    <p>{{member.data.username}}</p>
+    </tab>
+   <!--  -->
+        <tab heading='Interests'> 
+            <h4>
+                Interests
+            </h4>
+            <p>{{member.data.username}}</p>
+           
+            </tab>
+            <tab heading='Photos'>
+                <h4>
+                    Photos
+                </h4>
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages" 
+                class="ngx-gallery"></ngx-gallery>
+              
+                </tab> 
+                <!-- {{member.data.interests}} -->
+                 <tab heading="Messages "> 
+                    <h4>
+                        Messages
+                    </h4>
+                    <p>Here will be Messages</p>
+                   
+                    </tab>
+            </tabset>
+            
+                <!-- <tabset>
+                  <tab heading="Basic title" id="tab1">Basic content</tab>
+                  <tab heading="Basic Title 1">Basic content 1</tab>
+                  <tab heading="Basic Title 2">Basic content 2</tab>
+                </tabset> -->
+              
+        </div>
+    </div>

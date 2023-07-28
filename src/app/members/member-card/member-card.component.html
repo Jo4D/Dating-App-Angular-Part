@@ -1,0 +1,50 @@
+<div class="card mb-4">
+    <ng-container *ngFor="let item of member.photos">
+    <div class="card-img-wrapper">
+<img src="{{item.url}}" alt="There is a photo" class="card-img-top">
+<ul class="list-inline member-icons animate text-center">
+    <li class="list-inline-item">
+        <button 
+        routerLink="/members/{{member.userName}}"
+        class="btn btn-primary">
+            <!-- <i class="fa fa-user"></i>   -->
+            <!-- <i class="fa-solid fa-user"></i> -->
+            <fa-icon [icon]="faUser"></fa-icon>
+        </button>
+    </li>
+    <li class="list-inline-item">
+        <button class="btn btn-primary">
+            <!-- <i class="fa fa-heart"></i> -->
+            <!-- <i class="fa-solid fa-heart"></i> -->
+            <fa-icon [icon]="faHeart"></fa-icon>
+
+        </button>
+    </li>
+    <li class="list-inline-item">
+        <button class="btn btn-primary">
+            <!-- <i class="fa fa-envelope"></i> -->
+                        <!-- <i class="fa-solid fa-envelope"></i> -->
+                        <fa-icon [icon]="faEnvelope"></fa-icon>
+
+                    </button>
+    </li>
+
+      
+</ul>
+    </div>
+</ng-container>
+    <div class="card-body p-1">
+
+<p class="card-text text-muted text-center" >
+    <fa-icon [icon]="faUser"></fa-icon>
+
+    <!-- {{member.userName|uppercase}} when I use Member Interface--> 
+    {{member.userName|uppercase}}
+
+</p>
+<!-- <h6 class="card-title text-center mb-1">
+<i></i>{{member.email}}
+</h6> -->
+    </div>
+</div>
+<!-- <button class="btn btn-primary" routerLink="/members/{{member.userName}}">Click</button> -->
